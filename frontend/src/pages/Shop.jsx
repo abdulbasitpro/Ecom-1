@@ -1,12 +1,13 @@
 import React from 'react';
+import ProductCard from '../components/ProductCard';
 
 const products = [
-  { id: 1, name: 'Minimalist Wallet', price: '$45.00', image: '/wallet.png' },
-  { id: 2, name: 'Sleek Sunglasses', price: '$120.00', image: '/accessories.png' },
-  { id: 3, name: 'Premium Watch', price: '$250.00', image: '/accessories.png' },
-  { id: 4, name: 'Urban Jacket', price: '$180.00', image: '/new_arrivals.png' },
-  { id: 5, name: 'Leather Belt', price: '$35.00', image: '/wallet.png' },
-  { id: 6, name: 'Fashion Cap', price: '$25.00', image: '/new_arrivals.png' },
+  { id: 1, name: 'Minimalist Wallet', price: 'Rs 2,450.00', image: '/wallet.png' },
+  { id: 2, name: 'Sleek Sunglasses', price: 'Rs 4,500.00', image: '/accessories.png' },
+  { id: 3, name: 'Premium Watch', price: 'Rs 12,500.00', image: '/accessories.png' },
+  { id: 4, name: 'Urban Jacket', price: 'Rs 5,800.00', image: '/new_arrivals.png' },
+  { id: 5, name: 'Leather Belt', price: 'Rs 1,800.00', image: '/wallet.png' },
+  { id: 6, name: 'Fashion Cap', price: 'Rs 1,200.00', image: '/new_arrivals.png' },
 ];
 
 const Shop = () => {
@@ -24,22 +25,9 @@ const Shop = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
           {products.map((product) => (
-            <div key={product.id} className="group cursor-pointer">
-              <div className="aspect-[3/4] overflow-hidden mb-6 bg-meers-100 relative">
-                <img 
-                  src={product.image} 
-                  alt={product.name} 
-                  className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
-                />
-                <button className="absolute bottom-0 left-0 w-full bg-black text-white py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 uppercase tracking-widest text-xs font-bold">
-                  Add to Cart
-                </button>
-              </div>
-              <h3 className="text-sm uppercase tracking-widest font-medium mb-1">{product.name}</h3>
-              <p className="text-gray-500 text-sm">{product.price}</p>
-            </div>
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>
