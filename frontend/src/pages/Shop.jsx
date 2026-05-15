@@ -1,16 +1,10 @@
 import React from 'react';
 import ProductCard from '../components/ProductCard';
 
-const products = [
-  { id: 1, name: 'Minimalist Wallet', price: 'Rs 2,450.00', image: '/wallet.png' },
-  { id: 2, name: 'Sleek Sunglasses', price: 'Rs 4,500.00', image: '/accessories.png' },
-  { id: 3, name: 'Premium Watch', price: 'Rs 12,500.00', image: '/accessories.png' },
-  { id: 4, name: 'Urban Jacket', price: 'Rs 5,800.00', image: '/new_arrivals.png' },
-  { id: 5, name: 'Leather Belt', price: 'Rs 1,800.00', image: '/wallet.png' },
-  { id: 6, name: 'Fashion Cap', price: 'Rs 1,200.00', image: '/new_arrivals.png' },
-];
+import { useProducts } from '../context/ProductContext';
 
 const Shop = () => {
+  const { products } = useProducts();
   return (
     <div className="pt-40 pb-24">
       <div className="container mx-auto px-6">

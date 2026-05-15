@@ -2,19 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProductCard from './ProductCard';
 
-const products = [
-  { id: 1, name: 'Genuine Leather Wallet', oldPrice: 'Rs 5,500.00', price: 'Rs 2,450.00', image: '/wallet.png', isNew: true },
-  { id: 2, name: 'Sleek Tan Wallet', price: 'Rs 3,200.00', image: '/tan_wallet.png' },
-  { id: 3, name: 'Minimal Sunglasses', price: 'Rs 4,500.00', image: '/sunglasses.png', isNew: true },
-  { id: 4, name: 'Premium Classic Watch', price: 'Rs 12,500.00', image: '/watch.png' },
-  { id: 5, name: 'Urban Leather Belt', price: 'Rs 1,800.00', image: '/belt.png' },
-  { id: 6, name: 'Minimalist Card Holder', price: 'Rs 1,200.00', image: '/card_holder.png' },
-  { id: 7, name: 'Essential Black Wallet', price: 'Rs 2,800.00', image: '/wallet.png' },
-  { id: 8, name: 'Sleek Fashion Watch', price: 'Rs 9,500.00', image: '/watch.png' },
-];
+import { useProducts } from '../context/ProductContext';
 
 const ProductGrid = () => {
   const navigate = useNavigate();
+  const { products } = useProducts();
 
   return (
     <section className="mt-10 py-24 bg-white border-t border-gray-50 relative z-10">

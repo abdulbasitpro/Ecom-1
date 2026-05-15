@@ -6,11 +6,14 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Gallery from './pages/Gallery';
+import Dashboard from './pages/Dashboard';
 import Watermark from './components/Watermark';
+import { ProductProvider } from './context/ProductContext';
 
 function App() {
   return (
-    <Router>
+    <ProductProvider>
+      <Router>
       <div className="min-h-screen bg-white flex flex-col scroll-smooth">
         <Watermark />
         <AnnouncementBar />
@@ -22,11 +25,13 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/dashbord" element={<Dashboard />} />
           </Routes>
         </main>
         <Footer />
       </div>
-    </Router>
+      </Router>
+    </ProductProvider>
   );
 }
 
